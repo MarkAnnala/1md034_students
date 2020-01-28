@@ -8,7 +8,7 @@
         <main>
             <h1> Welcome to Mr Grills Burgers</h1>
 
-              <section>
+              <section id="Burgers">
                 <h2>What kind of burger are you looking for?  </h2>
                 <p>Please choose your burger</p>
                 <table>
@@ -52,11 +52,42 @@
 
                 </table>
             </section>
-            <section>
+            <section id ="deliveryinformation">
                 <h3>Please enter your deliveryinformation</h3>
                 <p>Here's where you insert your info</p>
             </section>
             
+            <section id="contact"> 
+                <h4>Delivery information: </h4>
+                    
+
+                
+                <form>  
+                    <p> 
+                        <label for="firstname"> Full Name </label><br>
+                        <input type ="text" id ="firstname" name ="fn" required = "required" placeholder="First and last name" />
+                    </p>
+                    
+                    <p>
+                        <label for="email">E-Mail </label><br>
+                        <input type ="email" id ="email" name ="em" required="required" placeholder="E-mail adress" />
+                    </p>
+
+                    <p> 
+                        <label for="street"> Street Name</label><br>
+                        <input type="text" id ="streetname" name ="sn" required="required" placeholder="Street Name" />
+                    </p>
+                    <p>
+                        <label for ="House">House</label> <br>
+                        <input type="number" id ="housenumber" name ="hn" required="required" placeholder="House number" />
+                    </p>
+
+
+
+                </form>
+
+
+            </section>
         </main>
             
         <footer>&copy; Mr Grills Burger</footer>

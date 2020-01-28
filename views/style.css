@@ -5,5 +5,10 @@
 body {
     font-family: 'Bitter', serif;
     font-size: 1.5vh ;
-    color: darkolivegreen;
+    color: darkmagenta;
  }
+
+.allergies {
+    font-weight: bolder;
+}
+

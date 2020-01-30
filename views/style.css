@@ -2,6 +2,16 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bitter&display=swap');
 
+header > img {
+    width: 100%;   
+    margin-left: 20px;
+    height: 250px;
+    opacity: 0.8;
+}
+
+header > h1{
+    margin-left: 20px;
+}
 body {
     font-family: 'Bitter', serif;
     font-size: 1.5vh ;
@@ -16,16 +26,18 @@ body {
 #Burgers {
     color: white;
     background-color: black;
-    margin-top: 80px;
+    margin-top: 20px;
     border: 2px dashed white;
     border-radius: 0.3cm;
     padding-left: 20px;
+    margin-left: 20px;
 }
 
 #deliveryinformation {
     border: 2px dashed black; 
     border-radius: 0.3cm;
     padding-left: 20px;
+    margin-left: 20px;
 }
 
 button {

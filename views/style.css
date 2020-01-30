@@ -70,7 +70,7 @@ button:hover {
 .gridwrapper {
     display: grid; 
     grid-column-gap: 400px; 
-    grid-template-columns: 100px 100px 100px;
+    grid-template-columns: 10em 10em 10em;
     
 }
 .burger {
@@ -82,17 +82,17 @@ button:hover {
 .burgerA {
     grid-column: 1;
     grid-row: 1;
-    width: 400px;
+    width: 25em;
 }
 .burgerB {
     grid-column: 2;
     grid-row: 1;
-    width: 400px;
+    width: 25em;
 }
 .burgerC{
     grid-column: 3;
     grid-row: 1;
-    width: 400px;
+    width: 25em;
 }
 
 footer {

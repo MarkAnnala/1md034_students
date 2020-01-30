@@ -16,14 +16,18 @@ body {
 #Burgers {
     color: white;
     background-color: black;
+    margin-top: 80px;
 }
 
 #deliveryinformation {
 
 }
 
+button {
+    margin-top: 20px;
+}
 button:hover {
-    background-color: green; 
+    background-color: rgb(27, 255, 27); 
     cursor: all-scroll; 
 }
 

@@ -70,30 +70,30 @@ button:hover {
 .gridwrapper {
     display: grid; 
     grid-column-gap: 400px; 
-    grid-template-columns: 10em 10em 10em;
-    
+    grid-template-columns: 5em 5em 5em;
+        
 }
 .burger {
     border-radius: 5px; 
     padding: 20px; 
     font-size: 150%; 
 }
-
 .burgerA {
     grid-column: 1;
     grid-row: 1;
-    width: 25em;
+    width: 30em;
 }
 .burgerB {
     grid-column: 2;
     grid-row: 1;
-    width: 25em;
+    width: 30em;
 }
 .burgerC{
     grid-column: 3;
     grid-row: 1;
-    width: 25em;
+    width: 20em;
 }
+
 
 footer {
     text-align: center;

@@ -4,17 +4,17 @@
 
 header > img {
     width: 100%;   
-    margin-left: 20px;
     height: auto;
     width: 100%;
     opacity: 0.8;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 header {
     overflow: hidden;
 }
 header > h1{
-    margin-left: 20px;
     position: absolute;
     height: 100px;
     color: black;
@@ -40,14 +40,16 @@ body {
     border: 2px dashed white;
     border-radius: 0.3cm;
     padding-left: 20px;
-    margin-left: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 #deliveryinformation {
     border: 2px dashed black; 
     border-radius: 0.3cm;
     padding-left: 20px;
-    margin-left: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 button {
@@ -58,7 +60,36 @@ button:hover {
     cursor: all-scroll; 
 }
 
-table {
-    width: 100%;
-    margin: 0 auto; 
+.gridwrapper {
+    display: grid; 
+    grid-column-gap: 400px; 
+    grid-template-columns: 100px 100px 100px;
+    
+}
+.burger {
+    border-radius: 5px; 
+    padding: 20px; 
+    font-size: 150%; 
+}
+
+.burgerA {
+    grid-column: 1;
+    grid-row: 1;
+    width: 400px;
+}
+.burgerB {
+    grid-column: 2;
+    grid-row: 1;
+    width: 400px;
+}
+.burgerC{
+    grid-column: 3;
+    grid-row: 1;
+    width: 400px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }

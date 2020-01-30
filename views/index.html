@@ -1,108 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Mr Grills Burgers</title>
-        <header> <h1>Welcome to Mr Grills Burgers</h1><img src="Skärmavbild 2020-01-30 kl. 11.39.36.png"></header>
-        <meta charset="utf-8"/>
-    </head>
-    <body>
-        <main>
-            <section id="Burgers">
-                <h2>What kind of burger are you looking for?  </h2>
-                <p>Please choose your burger</p>
-                <table>
-                    <thead> 
-                        <tr>
-                            <th>The burger of death</th>
-                            <th> The "All good things come in three"</th>
-                            <th> The salad deluxe</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <ul> 
-                                    <img src="https://thumbor.thedailymeal.com/h2zzijil7--FvRjJqNCPJolcQVg=/870x565/filters:focal(595x522:596x523)/https://www.thedailymeal.com/sites/default/files/2017/11/28/copy/shakeshack.jpg" alt="You might die.." title ="The burger of death" height="300" width="400">
-                                    <li>The biggest, baddest burger there is with double cheese slices per patty</li>
-                                    <li>2500 kcal</li>
-                                    <li><section class ="allergies">Contains both gluten and lactose</section> </li>
-                                </ul>
-                            </td>
-                            <td>
-                                <ul>
-                                    <img src ="https://farm1.staticflickr.com/23/25199779_37a61d7b5b_b.jpg" alt="Small? take three" title="3 small bites" height="300" width="400">
-                                    <li>For those who takes large bites</li>
-                                    <li><section class ="allergies">Contains both gluten and lactose</section></li>
-                                    <li>Finest Japanese wagyu beef</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <ul>
-                                    <img src ="https://www.max.se/contentassets/5c7a2201abd144fc94ca2bdf1788cb13/product_salad-wrap-burgare.jpg" alt="For those of you who likes salad" title ="Salad deluxe, works for everyone!"" height="300" width="400">
-                                    <li>The burger for everyone </li>
-                                    <li>Newly developed vegan cheese and bean-meat</li>
-                                    <li><section class ="allergies">Vegan and gluten free</section></li>
-                                </ul>
-                            </td>
-                        </tr>
 
-                    </tbody>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Mr Grills Burgers</title>
+    <meta charset="utf-8" />
 
-                </table>
-            </section>
-            <section id ="deliveryinformation">
-                <h3>Please enter your deliveryinformation</h3>
-                <p>Here's where you insert your info</p>
-            
-            
-            <section id="contact"> 
+</head>
+
+<body>
+    <header>
+        <img src="Skärmavbild 2020-01-30 kl. 11.39.36.png">
+        <h1>Welcome to Mr Grills Burgers</h1>
+    </header>
+    <main>
+        <section id="Burgers">
+            <h2>What kind of burger are you looking for? </h2>
+            <p>Please choose your burger</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>The burger of death</th>
+                        <th> The "All good things come in three"</th>
+                        <th> The salad deluxe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <img src="https://thumbor.thedailymeal.com/h2zzijil7--FvRjJqNCPJolcQVg=/870x565/filters:focal(595x522:596x523)/https://www.thedailymeal.com/sites/default/files/2017/11/28/copy/shakeshack.jpg"
+                                    alt="You might die.." title="The burger of death" height="300" width="400">
+                                <li>The biggest, baddest burger there is with double cheese slices per patty</li>
+                                <li>2500 kcal</li>
+                                <li>
+                                    <section class="allergies">Contains both gluten and lactose</section>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <img src="https://farm1.staticflickr.com/23/25199779_37a61d7b5b_b.jpg"
+                                    alt="Small? take three" title="3 small bites" height="300" width="400">
+                                <li>For those who takes large bites</li>
+                                <li>
+                                    <section class="allergies">Contains both gluten and lactose</section>
+                                </li>
+                                <li>Finest Japanese wagyu beef</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <img src="https://www.max.se/contentassets/5c7a2201abd144fc94ca2bdf1788cb13/product_salad-wrap-burgare.jpg"
+                                    alt="For those of you who likes salad"
+                                    title="Salad deluxe, works for everyone!"" height=" 300" width="400">
+                                <li>The burger for everyone </li>
+                                <li>Newly developed vegan cheese and bean-meat</li>
+                                <li>
+                                    <section class="allergies">Vegan and gluten free</section>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </section>
+        <section id="deliveryinformation">
+            <h3>Please enter your deliveryinformation</h3>
+            <p>Here's where you insert your info</p>
+
+
+            <section id="contact">
                 <h4>Delivery information: </h4>
-                <form>  
-                    <p> 
+                <form>
+                    <p>
                         <label for="firstname"> Full Name </label><br>
-                        <input type ="text" id ="firstname" name ="fn" required = "required" placeholder="First and last name" />
+                        <input type="text" id="firstname" name="fn" required="required"
+                            placeholder="First and last name" />
                     </p>
-                    
+
                     <p>
                         <label for="email">E-Mail </label><br>
-                        <input type ="email" id ="email" name ="em" required="required" placeholder="E-mail adress" />
+                        <input type="email" id="email" name="em" required="required" placeholder="E-mail adress" />
                     </p>
 
-                    <p> 
+                    <p>
                         <label for="street"> Street Name</label><br>
-                        <input type="text" id ="streetname" name ="sn" required="required" placeholder="Street Name" />
+                        <input type="text" id="streetname" name="sn" required="required" placeholder="Street Name" />
                     </p>
                     <p>
 
-                        <label for ="House">House</label> <br>
-                        <input type="number" id ="housenumber" name ="hn" required="required" placeholder="House number" />
+                        <label for="House">House</label> <br>
+                        <input type="number" id="housenumber" name="hn" required="required"
+                            placeholder="House number" />
                     </p>
-                   
+
                     <p>
-                        <label for ="payment">Payment options</label><br />
-                        <select id ="payment" name ="rcp"> 
+                        <label for="payment">Payment options</label><br />
+                        <select id="payment" name="rcp">
                             <option>Credit card</option>
-                            <option>Klarna</opt  ion>
+                            <option>Klarna</opt ion>
                             <option>Swish</option>
                             <option>Cash on delivery</option>
                             <option>Bitcoin</option>
                         </select>
                     </p>
                     <p>
-                        <label for ="button">Please state your gender</label> <br>
-                        <input type="radio" id ="button" name="gn" required ="required" value="Male" checked="checked">Male<br>
-                        <input type="radio" id ="button" name="gn" required ="required" value="Male">Female<br>
-                        <input type="radio" id ="button" name="gn" required ="required" value="Male">Do not wish to provide<br>
+                        <label for="button">Please state your gender</label> <br>
+                        <input type="radio" id="button" name="gn" required="required" value="Male"
+                            checked="checked">Male<br>
+                        <input type="radio" id="button" name="gn" required="required" value="Male">Female<br>
+                        <input type="radio" id="button" name="gn" required="required" value="Male">Do not wish to
+                        provide<br>
                     </p>
-                   
-                    <button type="submit"><img src="https://res.cloudinary.com/teepublic/image/private/s--KMwPCs-h--/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1547152871/production/designs/3932294_0.jpg" height=15" width="15"/>Send info</button>
+
+                    <button type="submit"><img
+                            src="https://res.cloudinary.com/teepublic/image/private/s--KMwPCs-h--/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1547152871/production/designs/3932294_0.jpg"
+                            height=15" width="15" />Send info</button>
                 </form>
             </section>
         </section>
-        </main>
-           
-        <footer>&copy; Mr Grills Burgers</footer>
-    </body>
+    </main>
+
+    <footer>&copy; Mr Grills Burgers</footer>
+</body>
+
 </html>
-           

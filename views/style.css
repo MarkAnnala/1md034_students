@@ -5,12 +5,22 @@
 header > img {
     width: 100%;   
     margin-left: 20px;
-    height: 250px;
+    height: auto;
+    width: 100%;
     opacity: 0.8;
 }
 
+header {
+    overflow: hidden;
+}
 header > h1{
     margin-left: 20px;
+    position: absolute;
+    height: 100px;
+    color: black;
+    margin-left: 350px;
+    font-size: 6vh;
+    margin-top: -300px;
 }
 body {
     font-family: 'Bitter', serif;

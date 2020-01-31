@@ -7,8 +7,6 @@ header > img {
     height: 20em;
     width: 100%;
     opacity: 0.8;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
 header {
@@ -27,7 +25,9 @@ body {
     font-family: 'Bitter', serif;
     font-size: 1.5vh ;
     color: darkmagenta;
-    margin: 0 auto; 
+    margin: 0 1em;
+
+
  }
 
 .allergies {
@@ -41,8 +41,6 @@ body {
     border: 2px dashed white;
     border-radius: 0.3cm;
     padding-left: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
 #deliveryinformation {

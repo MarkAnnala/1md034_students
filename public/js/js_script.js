@@ -14,7 +14,7 @@ function menuItem (name, kcal, gluten, lactose, imageUrl){
 }
 
 function nameAndKcal (menuitem){
-    return this.name + ' ' + this.kcal; 
+    return menuitem.name + ' ' + menuitem.kcal + 'kcal';
 }
 
 let burgerOfDeath = new menuItem("The Burger Of Death", 2500, "gluten", "lactose", "https://thumbor.thedailymeal.com/h2zzijil7--FvRjJqNCPJolcQVg=/870x565/filters:focal(595x522:596x523)/https://www.thedailymeal.com/sites/default/files/2017/11/28/copy/shakeshack.jpg" );
@@ -23,10 +23,25 @@ let saladDeluxe = new menuItem("The Salad Deluxe", 300, "no gluten", "no lacotse
 let theAmerican = new menuItem("The American", 1200, "gluten", "lactose", "https://moneydotcomvip.files.wordpress.com/2019/10/gettyimages-151814948-1_re.jpg"); 
 let cheesyDeluxe= new menuItem("The Chessy deluxe", 2000, "no gluten", "lactose", "https://cdn.junglecreations.com/wp/junglecms/2018/02/Cheese-Burger-Kebab_Word_Press_Photos.jpg"); 
 
+var id = document.getElementById("myID");
 
-nameAndKcal(burgerOfDeath); 
-nameAndKcal(allGoodThings); 
-nameAndKcal(saladDeluxe); 
-nameAndKcal(theAmerican); 
-nameAndKcal(cheesyDeluxe); 
+var death = document.createElement("p");
+death.appendChild(document.createTextNode(nameAndKcal(burgerOfDeath)));
+id.appendChild(death);
 
+
+var allgood = document.createElement("p");
+allgood.appendChild(document.createTextNode(nameAndKcal(allGoodThings)));
+id.appendChild(allgood);
+
+var salad= document.createElement("p");
+salad.appendChild(document.createTextNode(nameAndKcal(saladDeluxe)));
+id.appendChild(salad);
+
+var american= document.createElement("p");
+american.appendChild(document.createTextNode(nameAndKcal(theAmerican)));
+id.appendChild(american);
+
+var cheesy= document.createElement("p");
+cheesy.appendChild(document.createTextNode(nameAndKcal(cheesyDeluxe)));
+id.appendChild(cheesy);

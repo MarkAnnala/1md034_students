@@ -52,6 +52,13 @@ body {
     margin-top: 5px;
 }
 
+.cellitem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+}
 button {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -61,10 +68,9 @@ button:hover {
     cursor: all-scroll; 
 }
 
-.gridwrapper {
+#gridwrapper {
     display: grid; 
-    grid-column-gap: 400px; 
-    grid-template-columns: 5em 5em 5em;
+    grid-template-columns: repeat(3, minmax(auto,1fr));
         
 }
 .burger {

@@ -1,3 +1,4 @@
+/*
 <script src="https://vuejs.org/js/vue.js"></script>
 <div id="myID">
   <div v-for="burgers in menu">
@@ -54,3 +55,4 @@ const vm = new Vue({
     
   }
 })
+*/

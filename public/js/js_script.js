@@ -1,3 +1,4 @@
+
 function menuItem (name, kcal, gluten, lactose, imageUrl){
     this.name = name; 
     this.kcal = kcal; 
@@ -25,23 +26,24 @@ let cheesyDeluxe= new menuItem("The Chessy deluxe", 2000, "no gluten", "lactose"
 
 var id = document.getElementById("myID");
 
-var death = document.createElement("p");
-death.appendChild(document.createTextNode(nameAndKcal(burgerOfDeath)));
-id.appendChild(death);
 
-
-var allgood = document.createElement("p");
-allgood.appendChild(document.createTextNode(nameAndKcal(allGoodThings)));
-id.appendChild(allgood);
-
-var salad= document.createElement("p");
-salad.appendChild(document.createTextNode(nameAndKcal(saladDeluxe)));
-id.appendChild(salad);
-
-var american= document.createElement("p");
-american.appendChild(document.createTextNode(nameAndKcal(theAmerican)));
-id.appendChild(american);
-
-var cheesy= document.createElement("p");
-cheesy.appendChild(document.createTextNode(nameAndKcal(cheesyDeluxe)));
-id.appendChild(cheesy);
+for (var burger of menu){
+	let heading = document.createElement("H1"); 
+  heading.appendChild(document.createTextNode(burger.name));
+  id.appendChild(heading);
+  
+  let listItem = document.createElement("li"); 
+  listItem.appendChild(document.createTextNode(burger.kcal + ' kcal')); 
+  id.appendChild(listItem);
+  if (burger.gluten)
+  {
+  	let gluten = document.createElement("li");
+    gluten.appendChild(document.createTextNode("Contains gluten"));
+    id.appendChild(gluten);
+  }
+  if(burger.lactose){
+  let lactose = document.createElement("li"); 
+  lactose.appendChild(document.createTextNode("Contains lactose")); 
+  id.appendChild(lactose); 
+  }
+}

@@ -1,4 +1,5 @@
 
+/*
 function menuItem(name, info,  kcal, gluten, lactose, imageUrl) {
     this.name = name;
     this.info = info; 
@@ -60,3 +61,4 @@ for (var burger of menu) {
     div.appendChild(ul);
     id.appendChild(div);
 }
+*/

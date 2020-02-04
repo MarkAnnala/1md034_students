@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="../public/js/menu.js"></script>
     <script src="../public/js/js_script.js" defer ></script>
     <script src="../public/js/vue_script.js" defer ></script>
     <script src="https://vuejs.org/js/vue.js" ></script> 
@@ -21,15 +22,15 @@
             <h1>What kind of burger are you looking for? </h1>
             <p>Please choose your burger</p>
             <div id="gridwrapper">
-                <div v-for = "burger in menu">
-                    <h2>{{burger.name}}</h2>
-                    <img :src= "burger.image" width="300" height="200"> 
+                <div v-for = "burger in burgers">
+                    <h2>{{burger.itemname}}</h2>
+                    <img :src= "burger.img" width="300" height="200"> 
                     <ul>
                         <li>
-                            {{burger.kcal}} kcal
+                            {{burger.kcal}}
                         </li>
                         <li>
-                            {{burger.info}}
+                            {{burger.iteminfo}}
                         </li>
                         <li v-if ="burger.lactose">
                             Contains lactose

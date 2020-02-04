@@ -1,28 +1,14 @@
-
-function menuItem(name, info,  kcal, gluten, lactose, imageUrl) {
-  this.name = name;
-  this.info = info; 
-  this.kcal = kcal;
-  this.gluten = gluten;
-  this.lactose = lactose;
-  this.image = imageUrl;
-}
-
-function nameAndKcal(menuitem) {
-  return menuitem.name + ' ' + menuitem.kcal + 'kcal';
-}
-
-let burgerOfDeath = new menuItem("The Burger Of Death", "The biggest, baddest burger there is with double cheese slices per patty",2500, true, true, "https://thumbor.thedailymeal.com/h2zzijil7--FvRjJqNCPJolcQVg=/870x565/filters:focal(595x522:596x523)/https://www.thedailymeal.com/sites/default/files/2017/11/28/copy/shakeshack.jpg");
-let allGoodThings = new menuItem("The All Good Things Come In Three", "For those who takes large bites", 800, true, true, "https://farm1.staticflickr.com/23/25199779_37a61d7b5b_b.jpg");
-let saladDeluxe = new menuItem("The Salad Deluxe", "The burger for everyone with newly developed bean meat and vegan cheese",300, false, false, "https://www.max.se/contentassets/5c7a2201abd144fc94ca2bdf1788cb13/product_salad-wrap-burgare.jpg");
-let theAmerican = new menuItem("The American", "For all you patrotic burgerlovers",1200, true, true, "https://moneydotcomvip.files.wordpress.com/2019/10/gettyimages-151814948-1_re.jpg");
-let cheesyDeluxe = new menuItem("The Chessy deluxe", "If the Burger Of Death isn't enough",2000, false, true, "https://cdn.junglecreations.com/wp/junglecms/2018/02/Cheese-Burger-Kebab_Word_Press_Photos.jpg");
+var burgerOfDeath = {itemname: food[0].name, iteminfo: food[0].info, kcal: food[0].kcal + " kcal", lactose: food[0].lactose, gluten: food[0].gluten, img: food[0].img}; 
+var allGoodThings = {itemname: food[1].name, iteminfo: food[1].info, kcal: food[1].kcal+" kcal", lactose: food[1].lactose, gluten: food[1].gluten, img: food[1].img}
+var saladDeluxe = {itemname: food[2].name, iteminfo: food[2].info, kcal: food[2].kcal+" kcal", lactose: food[2].lactose, gluten: food[2].gluten, img: food[2].img}
+var theAmerican = {itemname: food[3].name, iteminfo: food[3].info, kcal: food[3].kcal+" kcal", lactose: food[3].lactose, gluten: food[3].gluten, img: food[3].img}
+var cheesyDeluxe = {itemname: food[4].name, iteminfo: food[4].info, kcal: food[4].kcal+" kcal", lactose: food[4].lactose, gluten: food[4].gluten, img: food[4].img}
 
 
 const vm = new Vue({
   el: '#gridwrapper',
   data: {		
-     menu: [burgerOfDeath, allGoodThings, saladDeluxe, theAmerican, cheesyDeluxe],
+     burgers: [burgerOfDeath, allGoodThings, saladDeluxe, theAmerican, cheesyDeluxe],
     
   }
 })

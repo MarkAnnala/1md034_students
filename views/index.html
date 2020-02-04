@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="../public/js/menu.js"></script>
-    <script src="../public/js/js_script.js" defer ></script>
-    <script src="../public/js/vue_script.js" defer ></script>
-    <script src="https://vuejs.org/js/vue.js" ></script> 
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script src="js/js_script.js" defer></script>
+    <script src="js/vue_script.js" defer></script>
+   
     <title>Mr Grills Burgers</title>
     <meta charset="utf-8" />
 
@@ -14,7 +15,7 @@
 
 <body>
     <header>
-        <img src="header.png.png">
+        <img src="/img/header.png">
         <h1>Welcome to Mr Grills Burgers</h1>
     </header>
     <main>
@@ -22,9 +23,9 @@
             <h1>What kind of burger are you looking for? </h1>
             <p>Please choose your burger</p>
             <div id="gridwrapper">
-                <div v-for = "burger in burgers">
+                <div v-for="burger in burgers">
                     <h2>{{burger.itemname}}</h2>
-                    <img :src= "burger.img" width="300" height="200"> 
+                    <img :src="burger.img" width="300" height="200">
                     <ul>
                         <li>
                             {{burger.kcal}}
@@ -32,72 +33,63 @@
                         <li>
                             {{burger.iteminfo}}
                         </li>
-                        <li v-if ="burger.lactose">
+                        <li v-if="burger.lactose">
                             Contains lactose
                         </li>
-                        <li v-if ="burger.gluten">
+                        <li v-if="burger.gluten">
                             Contains gluten
                         </li>
                     </ul>
                 </div>
-                
-                
+
+
             </div>
         </section>
         <section id="deliveryinformation">
             <h3>Please enter your deliveryinformation</h3>
             <p>Here's where you insert your info</p>
 
+            <h4>Delivery information: </h4>
+            <form>
+                <p>
+                    <label for="name"> Full Name </label><br>
+                    <input type="text" id="firstname" name="fn" required="required"  placeholder="First and last name" />
+                </p>
+                <p>
+                    <label for="email">E-Mail </label><br>
+                    <input type="email" id="email" name="em" required="required" placeholder="E-mail adress" />
+                </p>
+                <p>
+                    <label for="street"> Street Name</label><br>
+                    <input type="text" id="streetname" name="sn" required="required" placeholder="Street Name" />
+                </p>
+                <p>
+                    <label for="House">House</label> <br>
+                    <input type="number" id="housenumber" name="hn" required="required" placeholder="House number" />
+                </p>
+                <p>
+                    <label for="payment">Payment options</label><br />
+                    <select id="payment" name="rcp">
+                        <option value="Credit Card">Credit card</option>
+                        <option value="Klarna">Klarna</opt ion>
+                        <option value="Swish">Swish</option>
+                        <option value="Cash on delivery">Cash on delivery</option>
+                        <option value="Bitcoin">Bitcoin</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="button">Please state your gender</label> <br>
+                    <input type="radio" name="gn" required="required" value="Male" checked="checked">Male<br>
+                    <input type="radio" name="gn" required="required" value="Female">Female<br>
+                    <input type="radio" name="gn" required="required" value="None">Do not wish to provide<br>
+                </p>
+            </form>
+           
+                <button v-on:click="markDone" id="knapp" type="submit" value="send">
+                    <img src="/img/button.jpg" height=15" width="15" /> Send info
+                </button>
 
-            <section id="contact">
-                <h4>Delivery information: </h4>
-                <form>
-                    <p>
-                        <label for="firstname"> Full Name </label><br>
-                        <input type="text" id="firstname" name="fn" required="required"
-                            placeholder="First and last name" />
-                    </p>
 
-                    <p>
-                        <label for="email">E-Mail </label><br>
-                        <input type="email" id="email" name="em" required="required" placeholder="E-mail adress" />
-                    </p>
-
-                    <p>
-                        <label for="street"> Street Name</label><br>
-                        <input type="text" id="streetname" name="sn" required="required" placeholder="Street Name" />
-                    </p>
-                    <p>
-
-                        <label for="House">House</label> <br>
-                        <input type="number" id="housenumber" name="hn" required="required"
-                            placeholder="House number" />
-                    </p>
-
-                    <p>
-                        <label for="payment">Payment options</label><br />
-                        <select id="payment" name="rcp">
-                            <option>Credit card</option>
-                            <option>Klarna</opt ion>
-                            <option>Swish</option>
-                            <option>Cash on delivery</option>
-                            <option>Bitcoin</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="button">Please state your gender</label> <br>
-                        <input type="radio" id="button" name="gn" required="required" value="Male"
-                            checked="checked">Male<br>
-                        <input type="radio" id="button" name="gn" required="required" value="Male">Female<br>
-                        <input type="radio" id="button" name="gn" required="required" value="Male">Do not wish to
-                        provide<br>
-                    </p>
-
-                    <button type="submit"><img
-                            src="https://res.cloudinary.com/teepublic/image/private/s--KMwPCs-h--/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1547152871/production/designs/3932294_0.jpg"
-                            height=15" width="15" />Send info</button>
-                </form>
-            </section>
         </section>
     </main>
 

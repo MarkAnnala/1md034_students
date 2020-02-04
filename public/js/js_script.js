@@ -1,8 +1,44 @@
-
 /*
 
-var id = document.getElementById("gridwrapper");
+let myButton = document.getElementById('knapp');
 
+myButton.onclick = function details(){
+    let name = document.getElementById("firstname").value; 
+    let email = document.getElementById("email").value;
+    let adress = document.getElementById("streetname").value; 
+    let house = document.getElementById("housenumber").value; 
+    
+    let paymentoptions = document.getElementById("payment"); 
+    let payment = paymentoptions.options[paymentoptions.selectedIndex].text; 
+
+    let genders = document.getElementsByName("gn"); 
+    let actualgender; 
+    for (var gender of genders){
+        if (gender.checked){
+            actualgender = gender.value;
+            break;
+        }
+    }
+
+    let arr = [name, email, adress, house, payment, actualgender]; 
+    console.log(arr);
+}
+
+myButton.onClick = function (){
+    console.log("1");
+    let arr = new Array(form.length); 
+    console.log(arr.length);
+    console.log("kuk");
+    for (let i = 0; i < form.length; i++)
+    {
+        arr[i] = form[i].value; 
+    }
+    console.log(arr); 
+    return arr; 
+    }
+
+
+var id = document.getElementById("gridwrapper");
 
 for (var burger of menu) {
     let div = document.createElement("div");
@@ -42,4 +78,5 @@ for (var burger of menu) {
     div.appendChild(ul);
     id.appendChild(div);
 }
+
 */

@@ -6,11 +6,18 @@ var theAmerican = {itemname: food[3].name, iteminfo: food[3].info, kcal: food[3]
 var cheesyDeluxe = {itemname: food[4].name, iteminfo: food[4].info, kcal: food[4].kcal+" kcal", lactose: food[4].lactose, gluten: food[4].gluten, img: food[4].img}
 
 
+
 const vm = new Vue({
   el: 'main',
   data: {		
-     burgers: [burgerOfDeath, allGoodThings, saladDeluxe, theAmerican, cheesyDeluxe],
-    
+    burgers: [burgerOfDeath, allGoodThings, saladDeluxe, theAmerican, cheesyDeluxe],
+    orderName: [], 
+    orderEmail: [], 
+    orderPayment: "Credit Card", 
+    orderStreet: [],
+    orderHouse: [], 
+    chosen: [],
+    orderPlaced: false, 
   },
   methods: {
     markDone: function() {
@@ -30,11 +37,29 @@ const vm = new Vue({
               break;
           }
       }
-  
-      let arr = [name, email, adress, house, payment, actualgender]; 
-      console.log(arr);
-    }
-}
+      this.chosen = [];
+      let checkedBurgers = document.getElementsByName("burgerbox"); 
+      let chosenBurgers = []; 
+      let i = 0; 
+      for (var checked of checkedBurgers){
+        if (checked.checked){
+          chosenBurgers[i] = " "+checked.value; 
+          i += 1; 
+        }
+      }
+      this.chosen += chosenBurgers; 
+      if(name != [] && email != [] && adress != [] && house != [])
+      {
+        if (this.chosen != []){
+        this.orderPlaced = true;
+      }else{
+        alert("Please choose a burger!");
+        }
+      }
+      
+
+    },
+  }
   
     
 })

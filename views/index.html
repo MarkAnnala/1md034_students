@@ -7,10 +7,10 @@
     <script type="text/javascript" src="js/menu.js"></script>
     <script src="js/js_script.js" defer></script>
     <script src="js/vue_script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.15/vue.js" defer ></script>
    
     <title>Mr Grills Burgers</title>
     <meta charset="utf-8" />
-
 </head>
 
 <body>
@@ -24,8 +24,9 @@
             <p>Please choose your burger</p>
             <div id="gridwrapper">
                 <div v-for="burger in burgers">
-                    <h2>{{burger.itemname}}</h2>
+                    <h2>{{burger.itemname}} <input name="burgerbox" type ="checkbox" :value ="burger.itemname"> </h2>
                     <img :src="burger.img" width="300" height="200">
+
                     <ul>
                         <li>
                             {{burger.kcal}}
@@ -50,26 +51,26 @@
             <p>Here's where you insert your info</p>
 
             <h4>Delivery information: </h4>
-            <form>
+            <form id="delivery" @submit.prevent="submitForm">
                 <p>
-                    <label for="name"> Full Name </label><br>
-                    <input type="text" id="firstname" name="fn" required="required"  placeholder="First and last name" />
+                    <label for="name">Full Name </label><br>
+                    <input type="text" required="required" input v-model ="orderName" id="firstname" name="fn" placeholder="First and last name" />
                 </p>
                 <p>
-                    <label for="email">E-Mail </label><br>
-                    <input type="email" id="email" name="em" required="required" placeholder="E-mail adress" />
+                    <label for="email" input >E-Mail </label><br>
+                    <input type="email" input v-model ="orderEmail" id="email" name="em" required="required" placeholder="E-mail adress" />
                 </p>
                 <p>
                     <label for="street"> Street Name</label><br>
-                    <input type="text" id="streetname" name="sn" required="required" placeholder="Street Name" />
+                    <input type="text" input v-model ="orderStreet" id="streetname" name="sn" required="required" placeholder="Street Name" />
                 </p>
                 <p>
                     <label for="House">House</label> <br>
-                    <input type="number" id="housenumber" name="hn" required="required" placeholder="House number" />
+                    <input type="number" input v-model ="orderHouse" id="housenumber" name="hn" required="required" placeholder="House number" />
                 </p>
                 <p>
                     <label for="payment">Payment options</label><br />
-                    <select id="payment" name="rcp">
+                    <select id="payment" input v-model ="orderPayment" name="rcp">
                         <option value="Credit Card">Credit card</option>
                         <option value="Klarna">Klarna</opt ion>
                         <option value="Swish">Swish</option>
@@ -85,15 +86,21 @@
                 </p>
             </form>
            
-                <button v-on:click="markDone" id="knapp" type="submit" value="send">
-                    <img src="/img/button.jpg" height=15" width="15" /> Send info
+                <button v-on:click="markDone" id="knapp" form ="delivery" type="submit" value="send">
+                    <img src="/img/button.jpg" height=15" width="15" /> Send order
                 </button>
-
+            
 
         </section>
-    </main>
 
+        <section id ="orderConfirmation" v-if="orderPlaced">
+
+            Name: {{orderName + ""}} <br> <br>
+            Burger: {{chosen +" "}} <br> <br>
+            Adress: {{orderStreet + " "+ orderHouse}} <br><br>
+            Payment option: {{orderPayment + ""}} <br><br>
+        </section>
+    </main>
     <footer>&copy; Mr Grills Burgers</footer>
 </body>
-
 </html>

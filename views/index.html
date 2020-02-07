@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="/socket.io/socket.io.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script type="text/javascript" src="js/menu.js"></script>
@@ -60,14 +61,7 @@
                     <label for="email" input >E-Mail </label><br>
                     <input type="email" input v-model ="orderEmail" id="email" name="em" required="required" placeholder="E-mail adress" />
                 </p>
-                <p>
-                    <label for="street"> Street Name</label><br>
-                    <input type="text" input v-model ="orderStreet" id="streetname" name="sn" required="required" placeholder="Street Name" />
-                </p>
-                <p>
-                    <label for="House">House</label> <br>
-                    <input type="number" input v-model ="orderHouse" id="housenumber" name="hn" required="required" placeholder="House number" />
-                </p>
+               
                 <p>
                     <label for="payment">Payment options</label><br />
                     <select id="payment" input v-model ="orderPayment" name="rcp">
@@ -85,7 +79,16 @@
                     <input type="radio" name="gn" required="required" value="None">Do not wish to provide<br>
                 </p>
             </form>
-           
+            <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+            <div class="view-box">
+                <div id="dots" v-on:click="addOrder">
+                    <div 
+                      v-for="(order, key) in orders"
+                      v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                      {{key}}
+                    </div>
+                </div>
+              </div>
                 <button v-on:click="markDone" id="knapp" form ="delivery" type="submit" value="send">
                     <img src="/img/button.jpg" height=15" width="15" /> Send order
                 </button>
@@ -97,7 +100,6 @@
 
             Name: {{orderName + ""}} <br> <br>
             Burger: {{chosen +" "}} <br> <br>
-            Adress: {{orderStreet + " "+ orderHouse}} <br><br>
             Payment option: {{orderPayment + ""}} <br><br>
         </section>
     </main>

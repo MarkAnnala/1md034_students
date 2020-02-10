@@ -52,7 +52,7 @@
             <p>Here's where you insert your info</p>
 
             <h4>Delivery information: </h4>
-            <form id="delivery" @submit.prevent="submitForm">
+            <form id="delivery" v-on:submit.prevent>
                 <p>
                     <label for="name">Full Name </label><br>
                     <input type="text" required="required" input v-model ="orderName" id="firstname" name="fn" placeholder="First and last name" />
@@ -81,15 +81,14 @@
             </form>
             <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
             <div class="view-box">
-                <div id="dots" v-on:click="addOrder">
+                <div id="dots" v-on:click="displayOrder">
                     <div 
-                      v-for="(order, key) in orders"
-                      v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-                      {{key}}
+                      v-bind:style=" { left: details.x + 'px', top: details.y + 'px'}">
+                        T
                     </div>
                 </div>
               </div>
-                <button v-on:click="markDone" id="knapp" form ="delivery" type="submit" value="send">
+                <button v-on:click="addOrder" id="knapp" form ="delivery" type="submit" value="send">
                     <img src="/img/button.jpg" height=15" width="15" /> Send order
                 </button>
             

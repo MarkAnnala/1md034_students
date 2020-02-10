@@ -22,32 +22,14 @@ const vm = new Vue({
     orders: {},
     deliveryInformation: {},
     details: {x: -100, y: -1000}, 
-  },
-  created: function () {
-    /* When the page is loaded, get the current orders stored on the server.
-     * (the server's code is in app.js) */
-    socket.on('initialize', function (data) {
-      this.orders = data.orders;
-    }.bind(this));
-
-    /* Whenever an addOrder is emitted by a client (every open map.html is
-     * a client), the server responds with a currentQueue message (this is
-     * defined in app.js). The message's data payload is the entire updated
-     * order object. Here we define what the client should do with it.
-     * Spoiler: We replace the current local order object with the new one. */
-    socket.on('currentQueue', function (data) {
-      this.orders = data.orders;
-    }.bind(this));
+    orderNumber: 1,
   },
   methods: {
     getNext: function () {
       /* This function returns the next available key (order number) in
        * the orders object, it works under the assumptions that all keys
        * are integers. */
-      let lastOrder = Object.keys(this.orders).reduce(function (last, next) {
-        return Math.max(last, next);
-      }, 0);
-      return lastOrder + 1;
+      return this.orderNumber +1 ; 
     },
     addOrder: function (event) {
       /* When you click in the map, a click event object is sent as parameter
@@ -79,7 +61,7 @@ const vm = new Vue({
               x: this.details.x,
               y: this.details.y,
             },
-            orderItems: ['Beans', 'Curry'],
+            orderItems: [this.chosen],
           });
           
         } else {
@@ -101,43 +83,6 @@ const vm = new Vue({
         }
   //      console.log(this.deliveryInformation);
     },
-    markDone: function () {
-      let name = document.getElementById("firstname").value;
-      let email = document.getElementById("email").value;
 
-      let paymentoptions = document.getElementById("payment");
-      let payment = paymentoptions.options[paymentoptions.selectedIndex].text;
-
-      let genders = document.getElementsByName("gn");
-      let actualgender;
-      for (var gender of genders) {
-        if (gender.checked) {
-          actualgender = gender.value;
-          break;
-        }
-      }
-      this.chosen = [];
-      let checkedBurgers = document.getElementsByName("burgerbox");
-      let chosenBurgers = [];
-      let i = 0;
-      for (var checked of checkedBurgers) {
-        if (checked.checked) {
-          chosenBurgers[i] = " " + checked.value;
-          i += 1;
-        }
-      }
-      this.chosen += chosenBurgers;
-      if (name != [] && email != []) {
-        if (this.chosen != []) {
-          this.orderPlaced = true;
-          
-        } else {
-          alert("Please choose a burger!");
-        }
-      }
-    },
-    
-  }
-
-
+}
 })

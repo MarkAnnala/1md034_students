@@ -22,7 +22,7 @@ const vm = new Vue({
     orders: {},
     deliveryInformation: {},
     details: {x: -100, y: -1000}, 
-    orderNumber: 1,
+    orderNumber: 0,
   },
   methods: {
     getNext: function () {
@@ -32,11 +32,6 @@ const vm = new Vue({
       return this.orderNumber +1 ; 
     },
     addOrder: function (event) {
-      /* When you click in the map, a click event object is sent as parameter
-       * to the function designated in v-on:click (i.e. this one).
-       * The click event object contains among other things different
-       * coordinates that we need when calculating where in the map the click
-       * actually happened. */
       this.chosen = [];
       let checkedBurgers = document.getElementsByName("burgerbox");
       let chosenBurgers = [];
@@ -62,6 +57,10 @@ const vm = new Vue({
               y: this.details.y,
             },
             orderItems: [this.chosen],
+            customerName: this.orderName, 
+            customerEmail: this.orderEmail, 
+            customerPayment: this.orderPayment,
+            
           });
           
         } else {
@@ -81,7 +80,6 @@ const vm = new Vue({
           x: event.clientX - 10 - offset.x, 
           y: event.clientY - 10 - offset.y,
         }
-  //      console.log(this.deliveryInformation);
     },
 
 }

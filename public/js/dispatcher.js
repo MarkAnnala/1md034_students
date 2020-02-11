@@ -8,7 +8,7 @@ const socket = io();
 const vm = new Vue({
   el: '#orders',
   data: {
-    orders: {},
+    orders: [],
   },
   created: function() {
     socket.on('initialize', function(data) {

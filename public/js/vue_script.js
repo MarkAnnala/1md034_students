@@ -21,15 +21,16 @@ const vm = new Vue({
     orderPlaced: false,
     orders: {},
     deliveryInformation: {},
-    details: {x: -100, y: -1000}, 
     orderNumber: 0,
+    details: {x:-100, y:-100},
   },
   methods: {
     getNext: function () {
       /* This function returns the next available key (order number) in
        * the orders object, it works under the assumptions that all keys
        * are integers. */
-      return this.orderNumber +1 ; 
+       
+      return ++this.orderNumber; 
     },
     addOrder: function (event) {
       this.chosen = [];
@@ -43,30 +44,22 @@ const vm = new Vue({
         }
       }
       this.chosen += chosenBurgers;
-      if (this.orderName != [] && this.orderEmail != []) {
-        if (this.chosen != []) {
+      if (this.orderName != [] && this.orderEmail != [] && this.chosen !=[]) {
           this.orderPlaced = true;
-          let offset = {
-            x: event.currentTarget.getBoundingClientRect().left,
-            y: event.currentTarget.getBoundingClientRect().top,
-          };
           socket.emit('addOrder', {
             orderId: this.getNext(),
-            details: {
-              x: this.details.x,
-              y: this.details.y,
-            },
+            details: this.details,
             orderItems: [this.chosen],
             customerName: this.orderName, 
             customerEmail: this.orderEmail, 
             customerPayment: this.orderPayment,
             
           });
-          
+
         } else {
           alert("Please choose a burger!");
         }
-      }
+      
            
 
     },
